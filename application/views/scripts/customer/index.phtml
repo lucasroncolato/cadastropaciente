@@ -1,0 +1,18 @@
+<a href="<?=$this->url(array("controller"=>"customer","action"=>"create"),null,true)?>">Novo Paciente</a>
+<table width="100%" cellpadding="3" cellspacing="0" border="1">
+   <tr>
+      <th>Nome</th>
+      <th>cpf</th>
+   </tr>
+   <?php foreach($this->dados AS $key => $pacientes): ?>
+   <tr>
+      <td><?= $pacientes->name ?></td>
+      <td><?= $pacientes->cpf  ?></td>
+      <td width='150'>
+         <a href="<?= $this->url(array("controller"=>"customer","action"=>"buscar","id"=>"{$pacientes['id']}"),null,true)?>">Buscar</a>
+         <a href="<?= $this->url(array("controller"=>"customer","action"=>"edit","id"=>"{$pacientes['id']}"),null,true)?>">Editar</a>
+         <a href="<?= $this->url(array("controller"=>"customer","action"=>"listar","id"=>"{$pacientes['id']}"),null,true)?>">Listar</a>
+      </td>
+   </tr>
+   <?php endforeach;?>
+</table>
